@@ -1,3 +1,5 @@
+package easy;
+
 /**
  * @anthor LingChen
  * @create 4/12/2019 3:36 PM
