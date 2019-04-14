@@ -5,7 +5,7 @@ package easy;
  * @create 4/12/2019 4:08 PM
  * @Description
  */
-public class Ex7 {
+public class Q7 {
     public int reverse(int x) {
         StringBuilder sb = new StringBuilder(String.valueOf(Math.abs(x)));
         sb.reverse();
@@ -22,7 +22,7 @@ public class Ex7 {
     }
 
     public static void main(String[] args) {
-        Ex7 ex7 = new Ex7();
-        System.out.println(ex7.reverse(123));
+        Q7 q7 = new Q7();
+        System.out.println(q7.reverse(123));
     }
 }

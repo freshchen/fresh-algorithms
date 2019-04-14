@@ -5,7 +5,7 @@ package easy;
  * @create 4/12/2019 3:36 PM
  * @Description
  */
-public class Ex1 {
+public class Q1 {
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
         for (int i = 0; i < nums.length; i++) {
@@ -20,7 +20,7 @@ public class Ex1 {
     }
 
     public static void main(String[] args) {
-        Ex1 twoSum = new Ex1();
+        Q1 twoSum = new Q1();
         int[] nums = new int[]{4, 2, 6};
         int target = 10;
         int[] result = twoSum.twoSum(nums, target);
