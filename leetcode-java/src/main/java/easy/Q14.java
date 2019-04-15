@@ -1,26 +1,13 @@
-//编写一个函数来查找字符串数组中的最长公共前缀。 
-//
-// 如果不存在公共前缀，返回空字符串 ""。 
-//
-// 示例 1: 
-//
-// 输入: ["flower","flow","flight"]
-//输出: "fl"
-// 
-//
-// 示例 2: 
-//
-// 输入: ["dog","racecar","car"]
-//输出: ""
-//解释: 输入不存在公共前缀。
-// 
-//
-// 说明: 
-//
-// 所有输入只包含小写字母 a-z 。 
-//
+package easy;
 
-class Solution {
+import java.lang.reflect.Array;
+
+/**
+ * @anthor LingChen
+ * @create 4/15/2019 10:07 AM
+ * @Description
+ */
+public class Q14 {
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 1) {
             return strs[0];
@@ -41,5 +28,10 @@ class Solution {
             }
         }
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Q14 q14 = new Q14();
+        System.out.println(q14.longestCommonPrefix(new String[]{"as", "asda", "asas"}));
     }
 }
