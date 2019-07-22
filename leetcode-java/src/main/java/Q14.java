@@ -1,7 +1,3 @@
-package easy;
-
-import java.lang.reflect.Array;
-
 /**
  * @anthor LingChen
  * @create 4/15/2019 10:07 AM
