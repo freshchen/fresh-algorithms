@@ -5,19 +5,14 @@
  */
 public class Q70 {
     public int climbStairs(int n) {
-        int half = n / 2;
-        int sum = 0;
-        int count = 0;
-        for (int i = 0; i <= half; i++) {
-            for (int j = 0; j <= n; j++) {
-                sum = 2 * i + j;
-                if (sum == n) {
-                    count++;
-                    sum = 0;
-                }
-            }
+        if (n == 1) return 1;
+        int[] result = new int[n + 1];
+        result[1] = 1;
+        result[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            result[i] = result[i - 1] + result[i - 2];
         }
-        return count;
+        return result[n];
     }
 
     public static void main(String[] args) {
