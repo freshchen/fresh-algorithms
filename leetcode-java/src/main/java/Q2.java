@@ -30,4 +30,13 @@ public class Q2 {
         }
         return result.next;
     }
+
+    private class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }

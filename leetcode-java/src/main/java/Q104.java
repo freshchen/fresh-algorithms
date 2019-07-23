@@ -11,4 +11,14 @@ public class Q104 {
         int right_length = maxDepth(root.right);
         return Math.max(left_length,right_length) + 1;
     }
+
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

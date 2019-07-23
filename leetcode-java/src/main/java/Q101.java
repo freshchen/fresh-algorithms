@@ -17,4 +17,14 @@ public class Q101 {
                 && isMirror(t1.right, t2.left)
                 && isMirror(t1.left, t2.right);
     }
+
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }

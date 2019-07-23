@@ -13,4 +13,14 @@ public class Q617 {
         result.right = mergeTrees(t1.right, t2.right);
         return result;
     }
+
+    private class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }
