@@ -24,43 +24,53 @@ import java.util.Stack;
 
 class MinStack {
 
-    private Stack<Integer> stack;
-    private Stack<Integer> minStack;
+    // 数据栈
+    private Stack<Integer> data;
+    // 辅助栈
+    private Stack<Integer> helper;
 
-    /** initialize your data structure here. */
+    /**
+     * initialize your data structure here.
+     */
     public MinStack() {
-        stack = new Stack<>();
-        minStack = new Stack<>();
+        data = new Stack<>();
+        helper = new Stack<>();
     }
 
+    // 思路 1：数据栈和辅助栈在任何时候都同步
+
     public void push(int x) {
-        if (minStack.peek() >= x || stack.isEmpty()){
-            minStack.push(x);
+        // 数据栈和辅助栈一定会增加元素
+        data.add(x);
+        if (helper.isEmpty() || helper.peek() >= x) {
+            helper.add(x);
+        } else {
+            helper.add(helper.peek());
         }
-        stack.push(x);
     }
 
     public void pop() {
-        if (!stack.isEmpty()) {
-            minStack.pop();
-            stack.pop();
+        // 两个栈都得 pop
+        if (!data.isEmpty()) {
+            helper.pop();
+            data.pop();
         }
-
     }
 
     public int top() {
-        if(!stack.isEmpty()){
-            return stack.peek();
+        if(!data.isEmpty()){
+            return data.peek();
         }
         throw new RuntimeException("栈中元素为空，此操作非法");
     }
 
     public int getMin() {
-        if(!minStack.isEmpty()){
-            return minStack.peek();
+        if(!helper.isEmpty()){
+            return helper.peek();
         }
         throw new RuntimeException("栈中元素为空，此操作非法");
     }
+
 }
 
 /**

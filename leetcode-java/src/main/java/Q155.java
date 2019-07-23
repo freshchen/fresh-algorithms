@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-
 import java.util.Stack;
 
 /**
@@ -37,13 +35,13 @@ public class Q155 {
         if(!stack.isEmpty()){
             return stack.peek();
         }
-        throw new RuntimeException("????????????");
+        throw new RuntimeException("");
     }
 
     public int getMin() {
         if(!minStack.isEmpty()){
             return minStack.peek();
         }
-        throw new RuntimeException("????????????");
+        throw new RuntimeException("");
     }
 }
