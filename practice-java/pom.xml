@@ -4,17 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ecnu.ling</groupId>
-    <artifactId>algorithms4</artifactId>
+    <groupId>freshchen</groupId>
+    <artifactId>practice-java</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <dependencies>
-        <dependency>
-            <groupId>edu.princeton.cs</groupId>
-            <artifactId>algs4</artifactId>
-            <version>1.0.3</version>
-        </dependency>
-    </dependencies>
 
 
 </project>
