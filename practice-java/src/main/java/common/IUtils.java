@@ -14,7 +14,7 @@ public class IUtils {
 
     public static void randomArray() {
         int size = 20;
-        int maxValue = 1000;
+        int maxValue = 20;
         arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) ((maxValue) * Math.random());
@@ -45,5 +45,6 @@ public class IUtils {
         arr[fromIndex] = arr[toIndex];
         arr[toIndex] = temp;
     }
+
 
 }
