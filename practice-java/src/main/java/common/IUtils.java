@@ -21,7 +21,7 @@ public class IUtils {
         }
     }
 
-    public static boolean test(int[] arr) {
+    public static boolean testSort(int[] arr) {
         int[] arrRight = getArr();
         Arrays.sort(arrRight);
         if (Arrays.equals(arr, arrRight)){

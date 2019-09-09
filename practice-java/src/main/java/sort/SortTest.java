@@ -11,7 +11,7 @@ public class SortTest {
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             IUtils.randomArray();
-            if ( ! IUtils.test(Bubble.sort(IUtils.getArr()))){
+            if ( ! IUtils.testSort(Bubble.sort(IUtils.getArr()))){
                 break;
             }
         }
