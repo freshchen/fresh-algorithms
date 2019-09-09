@@ -1,14 +1,13 @@
-package common;
+package sort;
 
-import sort.Bubble;
-import sort.Insert;
+import common.IUtils;
 
 /**
  * @anthor LingChen
  * @create 9/9/2019 5:55 PM
  * @Description
  */
-public class ITest {
+public class SortTest {
     public static void main(String[] args) {
         for (int i = 0; i < 5; i++) {
             IUtils.randomArray();
