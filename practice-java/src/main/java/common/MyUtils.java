@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @Author: Ling Chen
  * @Description:
  */
-public class IUtils {
+public class MyUtils {
 
     private static int[] arr = null;
 

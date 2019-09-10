@@ -1,18 +1,20 @@
 package common;
 
+import sort.DutchFlag;
 import sort.Merge;
+import sort.Quick;
 
 /**
  * @anthor LingChen
  * @create 9/9/2019 5:55 PM
  * @Description
  */
-public class ITest {
+public class MyTest {
 
     private static void text1() {
         for (int i = 0; i < 5; i++) {
-            IUtils.randomArray();
-            if (!IUtils.testSort(Merge.sort(IUtils.getArr()))) {
+            MyUtils.randomArray();
+            if (!MyUtils.testSort(Quick.sort(MyUtils.getArr()))) {
                 break;
             }
         }
@@ -20,6 +22,6 @@ public class ITest {
 
 
     public static void main(String[] args) {
-        ITest.text1();
+        MyTest.text1();
     }
 }

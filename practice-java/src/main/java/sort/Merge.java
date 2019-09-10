@@ -21,6 +21,7 @@ public class Merge {
         int mid = left + ((right - left) >> 1);
         sort(arr, left, mid);
         sort(arr, mid + 1, right);
+        // 已经分成了许多小份，开始合并
         merge(arr, left, mid, right);
     }
 
@@ -29,12 +30,15 @@ public class Merge {
         int i = 0;
         int p1 = left;
         int p2 = mid + 1;
+        // 左边右边通过辅助数组合并
         while (p1 <= mid && p2 <= right) {
             help[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
         }
+        // 左边没空加到后面
         while (p1 <= mid) {
             help[i++] = arr[p1++];
         }
+        // 右边没空加到后面
         while (p2 <= right) {
             help[i++] = arr[p2++];
         }
