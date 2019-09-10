@@ -1,6 +1,7 @@
 package common;
 
 import sort.DutchFlag;
+import sort.Heap;
 import sort.Merge;
 import sort.Quick;
 
@@ -14,7 +15,7 @@ public class MyTest {
     private static void text1() {
         for (int i = 0; i < 5; i++) {
             MyUtils.randomArray();
-            if (!MyUtils.testSort(Quick.sort(MyUtils.getArr()))) {
+            if (!MyUtils.testSort(Heap.sort(MyUtils.getArr()))) {
                 break;
             }
         }
