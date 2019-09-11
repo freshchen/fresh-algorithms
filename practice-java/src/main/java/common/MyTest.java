@@ -1,9 +1,8 @@
 package common;
 
-import sort.DutchFlag;
-import sort.Heap;
-import sort.Merge;
-import sort.Quick;
+import sort.*;
+
+import java.util.Arrays;
 
 /**
  * @anthor LingChen
@@ -12,13 +11,30 @@ import sort.Quick;
  */
 public class MyTest {
 
+    public static boolean testSort(int[] arr) {
+        int[] arrRight = MyUtils.getArr();
+        Arrays.sort(arrRight);
+        if (Arrays.equals(arr, arrRight)) {
+            System.out.println("PASS");
+            return true;
+        } else {
+            System.out.println("Right: " + Arrays.toString(arrRight));
+            System.out.println("Yours: " + Arrays.toString(arr));
+            return false;
+        }
+
+    }
+
     private static void text1() {
+        long startTime = System.nanoTime();
         for (int i = 0; i < 5; i++) {
             MyUtils.randomArray();
-            if (!MyUtils.testSort(Heap.sort(MyUtils.getArr()))) {
+            if (!testSort(Merge.sort(MyUtils.getArr()))) {
                 break;
             }
         }
+        long endTime = System.nanoTime();
+        System.out.println("程序运行时间： " + (endTime - startTime) + "纳秒");
     }
 
 

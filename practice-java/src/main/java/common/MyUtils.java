@@ -11,28 +11,40 @@ import java.util.Arrays;
 public class MyUtils {
 
     private static int[] arr = null;
+    private static int[][] matrix = null;
+
+    public static void randomMatrix() {
+        int size = 5;
+        int maxValue = 10;
+        matrix = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = (int) ((maxValue + 1) * Math.random()) - (int) ((maxValue) * Math.random());
+            }
+        }
+    }
+
+    public static int[][] getMatrix() {
+        int[][] copy = new int[matrix.length][matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            copy[i] = Arrays.copyOf(matrix[i], matrix[i].length);
+        }
+        return copy;
+    }
+
+    public static void prinMatrix(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+    }
 
     public static void randomArray() {
         int size = 20;
         int maxValue = 20;
         arr = new int[size];
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < size; i++) {
             arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) ((maxValue) * Math.random());
         }
-    }
-
-    public static boolean testSort(int[] arr) {
-        int[] arrRight = getArr();
-        Arrays.sort(arrRight);
-        if (Arrays.equals(arr, arrRight)){
-            System.out.println("PASS");
-            return true;
-        }else {
-            System.out.println("Right: " + Arrays.toString(arrRight));
-            System.out.println("Yours: " + Arrays.toString(arr));
-            return false;
-        }
-
     }
 
     public static int[] getArr() {
@@ -45,6 +57,5 @@ public class MyUtils {
         arr[fromIndex] = arr[toIndex];
         arr[toIndex] = temp;
     }
-
 
 }
