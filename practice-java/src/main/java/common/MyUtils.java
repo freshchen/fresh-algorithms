@@ -15,7 +15,7 @@ public class MyUtils {
 
     public static void randomMatrix() {
         int size = 5;
-        int maxValue = 10;
+        int maxValue = 20;
         matrix = new int[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
@@ -33,9 +33,11 @@ public class MyUtils {
     }
 
     public static void prinMatrix(int[][] matrix) {
+        System.out.println("Current matrix is :");
         for (int i = 0; i < matrix.length; i++) {
             System.out.println(Arrays.toString(matrix[i]));
         }
+        System.out.println();
     }
 
     public static void randomArray() {
