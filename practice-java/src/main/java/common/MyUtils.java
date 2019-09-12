@@ -71,7 +71,7 @@ public class MyUtils {
 
     public static Node getRandowIntegerNode(int size) {
         int maxValue = 20;
-        Node head = new Node(randomInt(maxValue));
+        Node head = new Node();
         Node result = head;
         for (int i = 0; i < size; i++) {
             head.next = new Node(randomInt(maxValue));

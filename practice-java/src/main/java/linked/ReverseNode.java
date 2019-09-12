@@ -12,8 +12,8 @@ public class ReverseNode {
 
     public static Node reverse(Node head) {
         Node curr = head;
-        Node result = null;
-        while (curr != null) {
+        Node result = new Node();
+        while (curr.next != null) {
             Node temp = curr.next;
             curr.next = result;
             result = curr;
