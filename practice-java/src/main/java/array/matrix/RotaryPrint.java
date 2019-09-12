@@ -1,4 +1,4 @@
-package array;
+package array.matrix;
 
 import common.MyUtils;
 

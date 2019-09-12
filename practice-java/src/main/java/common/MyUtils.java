@@ -19,7 +19,7 @@ public class MyUtils {
         matrix = new int[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                matrix[i][j] = (int) ((maxValue + 1) * Math.random()) - (int) ((maxValue) * Math.random());
+                matrix[i][j] = randomInt(maxValue);
             }
         }
     }
@@ -45,7 +45,7 @@ public class MyUtils {
         int maxValue = 20;
         arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) ((maxValue) * Math.random());
+            arr[i] = randomInt(maxValue);
         }
     }
 
@@ -53,11 +53,43 @@ public class MyUtils {
         return Arrays.copyOf(arr, arr.length);
     }
 
+    public static void printArr(int[] arr) {
+        System.out.println(Arrays.toString(arr));
+    }
+
 
     public static void swap(int[] arr, int fromIndex, int toIndex) {
         int temp = arr[fromIndex];
         arr[fromIndex] = arr[toIndex];
         arr[toIndex] = temp;
+    }
+
+
+    public static int randomInt(int max) {
+        return (int) (((max + 1) * Math.random()) - ((max) * Math.random()));
+    }
+
+    public static Node getRandowIntegerNode(int size) {
+        int maxValue = 20;
+        Node head = new Node(randomInt(maxValue));
+        Node result = head;
+        for (int i = 0; i < size; i++) {
+            head.next = new Node(randomInt(maxValue));
+            head = head.next;
+        }
+        return result;
+    }
+
+    public static void printNode(Node head) {
+        while (head.next != null) {
+            if (head.next.next == null) {
+                System.out.print(head.data);
+            } else {
+                System.out.print(head.data + " -> ");
+            }
+            head = head.next;
+        }
+        System.out.println();
     }
 
 }
