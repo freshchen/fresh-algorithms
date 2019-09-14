@@ -226,6 +226,18 @@ public class MyUtils {
         t3.right = t8;
         t4.left = t9;
         t4.right = t10;
+        root.parent = null;
+        t1.parent = root;
+        t2.parent = root;
+        t3.parent = t1;
+        t4.parent = t1;
+        t5.parent = t2;
+        t6.parent = t2;
+        t7.parent = t3;
+        t8.parent = t3;
+        t9.parent = t4;
+        t10.parent = t4;
+
         return root;
     }
 

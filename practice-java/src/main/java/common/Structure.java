@@ -20,6 +20,7 @@ public class Structure {
         public E data;
         public TreeNode<E> left;
         public TreeNode<E> right;
+        public TreeNode<E> parent;
 
         public TreeNode(E data) {
             this.data = data;

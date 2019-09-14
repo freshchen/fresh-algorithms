@@ -17,6 +17,7 @@ public class Traverse {
         if (root != null) {
             Stack<TreeNode> stack = new Stack<>();
             stack.push(root);
+            // 先进右再进左
             while (!stack.isEmpty()) {
                 root = stack.pop();
                 System.out.print(root.data + " -> ");
@@ -43,6 +44,7 @@ public class Traverse {
 
     public static void mid(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
+        // 左走到头了开始弹，然后去右
         while (root != null || !stack.isEmpty()) {
             if (root != null) {
                 stack.push(root);
@@ -67,6 +69,7 @@ public class Traverse {
     }
 
     public static void post(TreeNode root) {
+        // 把线序遍历反过来，得到前右左，然后再反过来变成左右前
         if (root != null) {
             Stack<TreeNode> stackStack = new Stack<>();
             Stack<TreeNode> stack = new Stack<>();
