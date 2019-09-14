@@ -1,6 +1,6 @@
-package common;
+package sort;
 
-import sort.*;
+import common.MyUtils;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class MyTest {
 
     public static boolean testSort(int[] arr) {
-        int[] arrRight = MyUtils.getArr();
+        int[] arrRight = MyUtils.genArr();
         Arrays.sort(arrRight);
         if (Arrays.equals(arr, arrRight)) {
             System.out.println("PASS");
@@ -29,7 +29,7 @@ public class MyTest {
         long startTime = System.nanoTime();
         for (int i = 0; i < 5; i++) {
             MyUtils.randomArray();
-            if (!testSort(Merge.sort(MyUtils.getArr()))) {
+            if (!testSort(Merge.sort(MyUtils.genArr()))) {
                 break;
             }
         }

@@ -2,8 +2,6 @@ package array.matrix;
 
 import common.MyUtils;
 
-import java.util.Arrays;
-
 /**
  * @anthor LingChen
  * @create 9/12/2019 10:09 AM
@@ -47,7 +45,7 @@ public class SnakePrint {
 
     public static void main(String[] args) {
         MyUtils.randomMatrix();
-        int[][] matrix = MyUtils.getMatrix();
+        int[][] matrix = MyUtils.genMatrix();
         MyUtils.prinMatrix(matrix);
         snakePrint(matrix);
 

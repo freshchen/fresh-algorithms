@@ -2,6 +2,9 @@ package common;
 
 import java.util.Arrays;
 
+import common.Structure.Node;
+import common.Structure.TreeNode;
+
 /**
  * @program: fresh-algorithms
  * @Date: 2019/9/8 23:02
@@ -24,7 +27,7 @@ public class MyUtils {
         }
     }
 
-    public static int[][] getMatrix() {
+    public static int[][] genMatrix() {
         int[][] copy = new int[matrix.length][matrix[0].length];
         for (int i = 0; i < matrix.length; i++) {
             copy[i] = Arrays.copyOf(matrix[i], matrix[i].length);
@@ -49,7 +52,7 @@ public class MyUtils {
         }
     }
 
-    public static int[] getArr() {
+    public static int[] genArr() {
         return Arrays.copyOf(arr, arr.length);
     }
 
@@ -69,27 +72,161 @@ public class MyUtils {
         return (int) (((max + 1) * Math.random()) - ((max) * Math.random()));
     }
 
-    public static Node getRandowIntegerNode(int size) {
-        int maxValue = 20;
-        Node head = new Node();
-        Node result = head;
-        for (int i = 0; i < size; i++) {
-            head.next = new Node(randomInt(maxValue));
-            head = head.next;
-        }
-        return result;
+    public static Node genNodeList() {
+        Node<Integer> head = new Node<>(1);
+        Node<Integer> l1 = new Node<>(2);
+        Node<Integer> l2 = new Node<>(3);
+        Node<Integer> l3 = new Node<>(4);
+        Node<Integer> l4 = new Node<>(5);
+        Node<Integer> l5 = new Node<>(6);
+        Node<Integer> l6 = new Node<>(7);
+        Node<Integer> l7 = new Node<>(8);
+        head.next = l1;
+        head.next.next = l2;
+        head.next.next.next = l3;
+        head.next.next.next.next = l4;
+        head.next.next.next.next.next = l5;
+        head.next.next.next.next.next.next = l6;
+        head.next.next.next.next.next.next.next = l7;
+        head.next.next.next.next.next.next.next.next = null;
+
+        return head;
     }
 
-    public static void printNode(Node head) {
-        while (head.next != null) {
-            if (head.next.next == null) {
-                System.out.print(head.data);
-            } else {
-                System.out.print(head.data + " -> ");
-            }
-            head = head.next;
+    public static Node genLoopNodeList() {
+        Node<Integer> head = new Node<>(1);
+        Node<Integer> l1 = new Node<>(2);
+        Node<Integer> l2 = new Node<>(3);
+        Node<Integer> l3 = new Node<>(4);
+        Node<Integer> l4 = new Node<>(5);
+        Node<Integer> l5 = new Node<>(6);
+        Node<Integer> l6 = new Node<>(7);
+        Node<Integer> l7 = new Node<>(8);
+        head.next = l1;
+        head.next.next = l2;
+        head.next.next.next = l3;
+        head.next.next.next.next = l4;
+        head.next.next.next.next.next = l5;
+        head.next.next.next.next.next.next = l6;
+        head.next.next.next.next.next.next.next = l7;
+        head.next.next.next.next.next.next.next.next = l5;
+
+        return head;
+    }
+
+    public static Node[] genTwoIntersectNodeList() {
+        Node<Integer> head = new Node<>(1);
+        Node<Integer> l1 = new Node<>(2);
+        Node<Integer> l2 = new Node<>(3);
+        Node<Integer> l3 = new Node<>(4);
+        Node<Integer> l4 = new Node<>(5);
+        Node<Integer> l5 = new Node<>(6);
+        Node<Integer> l6 = new Node<>(7);
+        Node<Integer> l7 = new Node<>(8);
+        Node<Integer> head2 = new Node<>(9);
+        Node<Integer> l21 = new Node<>(10);
+        Node<Integer> l22 = new Node<>(11);
+        Node<Integer> l23 = new Node<>(12);
+        head.next = l1;
+        head.next.next = l2;
+        head.next.next.next = l3;
+        head.next.next.next.next = l4;
+        head.next.next.next.next.next = l5;
+        head.next.next.next.next.next.next = l6;
+        head.next.next.next.next.next.next.next = l7;
+        head.next.next.next.next.next.next.next.next = null;
+        head2.next = l21;
+        head2.next.next = l22;
+        head2.next.next.next = l23;
+        head2.next.next.next.next = l6;
+
+        return new Node[]{head, head2};
+    }
+
+    /**
+     * flag为true返回两个入环节点一样的环，否则返回入环点不一样的
+     *
+     * @param flag
+     * @return
+     */
+    public static Node[] genTwoLoopIntersectNodeList(boolean flag) {
+        Node<Integer> head = new Node<>(1);
+        Node<Integer> l1 = new Node<>(2);
+        Node<Integer> l2 = new Node<>(3);
+        Node<Integer> l3 = new Node<>(4);
+        Node<Integer> l4 = new Node<>(5);
+        Node<Integer> l5 = new Node<>(6);
+        Node<Integer> l6 = new Node<>(7);
+        Node<Integer> l7 = new Node<>(8);
+        Node<Integer> head2 = new Node<>(9);
+        Node<Integer> l21 = new Node<>(10);
+        Node<Integer> l22 = new Node<>(11);
+        Node<Integer> l23 = new Node<>(12);
+        head.next = l1;
+        head.next.next = l2;
+        head.next.next.next = l3;
+        head.next.next.next.next = l4;
+        head.next.next.next.next.next = l5;
+        head.next.next.next.next.next.next = l6;
+        head.next.next.next.next.next.next.next = l7;
+        head.next.next.next.next.next.next.next.next = l5;
+        head2.next = l21;
+        head2.next.next = l22;
+        head2.next.next.next = l23;
+        if (flag) {
+            head2.next.next.next.next = l5;
+        } else {
+            head2.next.next.next.next = l6;
         }
+        return new Node[]{head, head2};
+    }
+
+    public static void printNode(Node node) {
+        if (node == null) {
+            System.out.println("This node is null");
+        } else {
+            System.out.println("Data is : " + node.data);
+        }
+    }
+
+    public static void printNodeList(Node head) {
+        int max = 0;
+        while (head != null) {
+            System.out.print(head.data + " -> ");
+            head = head.next;
+            max++;
+            if (max == 20) {
+                break;
+            }
+        }
+        String end = max == 20 ? "loop" : "null";
+        System.out.print(end);
         System.out.println();
+    }
+
+    public static TreeNode genBinaryTree() {
+        TreeNode<Integer> root = new TreeNode<>(1);
+        TreeNode<Integer> t1 = new TreeNode<>(2);
+        TreeNode<Integer> t2 = new TreeNode<>(3);
+        TreeNode<Integer> t3 = new TreeNode<>(4);
+        TreeNode<Integer> t4 = new TreeNode<>(5);
+        TreeNode<Integer> t5 = new TreeNode<>(6);
+        TreeNode<Integer> t6 = new TreeNode<>(7);
+        TreeNode<Integer> t7 = new TreeNode<>(8);
+        TreeNode<Integer> t8 = new TreeNode<>(9);
+        TreeNode<Integer> t9 = new TreeNode<>(10);
+        TreeNode<Integer> t10 = new TreeNode<>(11);
+        root.left = t1;
+        root.right = t2;
+        t1.left = t3;
+        t1.right = t4;
+        t2.left = t5;
+        t2.right = t6;
+        t3.left = t7;
+        t3.right = t8;
+        t4.left = t9;
+        t4.right = t10;
+        return root;
     }
 
 }

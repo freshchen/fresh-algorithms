@@ -60,7 +60,7 @@ public class RotaryPrint {
 
     public static void main(String[] args) {
         MyUtils.randomMatrix();
-        int[][] matrix = MyUtils.getMatrix();
+        int[][] matrix = MyUtils.genMatrix();
         MyUtils.prinMatrix(matrix);
         rotaryPrint(matrix);
 

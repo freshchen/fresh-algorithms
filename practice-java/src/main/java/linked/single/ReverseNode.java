@@ -1,7 +1,7 @@
-package linked;
+package linked.single;
 
 import common.MyUtils;
-import common.Node;
+import common.Structure.Node;
 
 /**
  * @anthor LingChen
@@ -12,8 +12,8 @@ public class ReverseNode {
 
     public static Node reverse(Node head) {
         Node curr = head;
-        Node result = new Node();
-        while (curr.next != null) {
+        Node result = null;
+        while (curr != null) {
             Node temp = curr.next;
             curr.next = result;
             result = curr;
@@ -23,8 +23,8 @@ public class ReverseNode {
     }
 
     public static void main(String[] args) {
-        Node head = MyUtils.getRandowIntegerNode(6);
-        MyUtils.printNode(head);
-        MyUtils.printNode(reverse(head));
+        Node head = MyUtils.genNodeList();
+        MyUtils.printNodeList(head);
+        MyUtils.printNodeList(reverse(head));
     }
 }
