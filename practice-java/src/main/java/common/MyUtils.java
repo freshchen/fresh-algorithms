@@ -1,9 +1,9 @@
 package common;
 
-import java.util.Arrays;
-
 import common.Structure.Node;
 import common.Structure.TreeNode;
+
+import java.util.Arrays;
 
 /**
  * @program: fresh-algorithms
@@ -241,4 +241,10 @@ public class MyUtils {
         return root;
     }
 
+    /**
+     * 可以任务组合生成独立的不同的哈希函数
+     */
+    public static int defineHash(Object obj) {
+        return obj.hashCode() >> 2 + obj.hashCode() ^ 2;
+    }
 }
