@@ -4,6 +4,7 @@ package tree.binary;
 import common.MyUtils;
 import common.Structure.TreeNode;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -100,6 +101,25 @@ public class Traverse {
         System.out.print(root.data + " -> ");
     }
 
+    public static void level(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        TreeNode curr = null;
+        while (!queue.isEmpty()) {
+            curr = queue.pop();
+            System.out.print(curr.data + " -> ");
+            if (curr.left != null) {
+                queue.add(curr.left);
+            }
+            if (curr.right != null) {
+                queue.add(curr.right);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("pre");
         preReur(MyUtils.genBinaryTree());
@@ -115,6 +135,10 @@ public class Traverse {
         postReur(MyUtils.genBinaryTree());
         System.out.println();
         post(MyUtils.genBinaryTree());
+
+        System.out.println("level");
+        level(MyUtils.genBinaryTree());
+        System.out.println();
 
     }
 }

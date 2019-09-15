@@ -15,18 +15,11 @@ public class PrePost {
         TreeNode result = null;
         if (node.left != null) {
             result = toTheEnd(node.left, "right");
-        } else if (node == node.parent.right) {
-            result = node.parent;
         } else {
-            TreeNode root = toTheEnd(node, "parent");
-            while (node.parent.left != null) {
-                if (node == root){
-                    result = root;
-                    break;
-                }
+            while (node != node.parent.right && node.parent != null) {
                 node = node.parent;
             }
-            result = node;
+            result = node == node.parent.right ? node.parent : result;
         }
         return result;
     }
@@ -35,12 +28,17 @@ public class PrePost {
         TreeNode result = null;
         if (node.right != null) {
             result = toTheEnd(node.right, "left");
+        } else {
+            while (node != node.parent.left && node.parent != null) {
+                node = node.parent;
+            }
+            result = node == node.parent.left ? node.parent : result;
         }
         return result;
     }
 
     public static TreeNode toTheEnd(TreeNode node, String dir) {
-        TreeNode result = null;
+        TreeNode result = new TreeNode(-1);
         if ("left".equals(dir)) {
             while (node.left != null) {
                 node = node.left;
@@ -60,7 +58,7 @@ public class PrePost {
 
     public static void main(String[] args) {
         System.out.println("pre");
-        TreeNode node = MyUtils.genBinaryTree().right.left;
+        TreeNode node = MyUtils.genBinaryTree().left.left;
         System.out.println(node.data + "'s pre is " + getPre(node).data);
 
         System.out.println("post");
