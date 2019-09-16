@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class AAASortTest {
 
     public static boolean testSort(int[] arr) {
-        int[] arrRight = MyUtils.genArr();
+        int[] arrRight = MyUtils.getArr();
         Arrays.sort(arrRight);
         if (Arrays.equals(arr, arrRight)) {
             System.out.println("PASS");
@@ -29,12 +29,12 @@ public class AAASortTest {
         long startTime = System.nanoTime();
         for (int i = 0; i < 5; i++) {
             MyUtils.randomArray();
-            if (!testSort(Merge.sort(MyUtils.genArr()))) {
+            if (!testSort(Merge.sort(MyUtils.getArr()))) {
                 break;
             }
         }
         long endTime = System.nanoTime();
-        System.out.println("程序运行时间： " + (endTime - startTime) + "纳秒");
+        System.out.println("Run time ： " + (endTime - startTime) + "ns");
     }
 
 

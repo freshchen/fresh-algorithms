@@ -11,18 +11,16 @@ import com.google.common.hash.Funnels;
 public class BloomGuava {
 
     public static BloomFilter init(int capacity, double errorRate) {
-        long start = System.currentTimeMillis();
-        BloomFilter<Integer> filter = BloomFilter.create(Funnels.integerFunnel(), capacity, errorRate);
+        BloomFilter <Integer> filter = BloomFilter.create(Funnels.integerFunnel(), capacity, errorRate);
         for (int i = 0; i < capacity; i++) {
             filter.put(i);
         }
-        long end = System.currentTimeMillis();
-        System.out.println("执行时间：" + (end - start) + " ms");
         return filter;
     }
 
     public static void main(String[] args) {
-        System.out.println(BloomGuava.init(100000, 0.001).mightContain(99999));
-        System.out.println(BloomGuava.init(100000, 0.001).mightContain(100000));
+        int capacity = 100000;
+        System.out.println(BloomGuava.init(capacity, 0.001).mightContain(capacity - 1));
+        System.out.println(BloomGuava.init(capacity, 0.001).mightContain(capacity));
     }
 }

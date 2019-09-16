@@ -52,7 +52,7 @@ public class MyUtils {
         }
     }
 
-    public static int[] genArr() {
+    public static int[] getArr() {
         return Arrays.copyOf(arr, arr.length);
     }
 
