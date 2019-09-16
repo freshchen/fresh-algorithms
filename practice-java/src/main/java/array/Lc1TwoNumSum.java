@@ -16,7 +16,7 @@ package array;
  * //
  * //
  */
-public class TwoNumSum1 {
+public class Lc1TwoNumSum {
 
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];

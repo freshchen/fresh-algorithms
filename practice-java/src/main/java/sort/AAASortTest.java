@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @create 9/9/2019 5:55 PM
  * @Description
  */
-public class MyTest {
+public class AAASortTest {
 
     public static boolean testSort(int[] arr) {
         int[] arrRight = MyUtils.genArr();
@@ -39,6 +39,6 @@ public class MyTest {
 
 
     public static void main(String[] args) {
-        MyTest.text1();
+        AAASortTest.text1();
     }
 }
