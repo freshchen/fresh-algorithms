@@ -9,6 +9,7 @@ import java.util.Arrays;
  * @create 9/9/2019 5:55 PM
  * @Description
  */
+@Deprecated
 public class AAASortTest {
 
     public static boolean testSort(int[] arr) {
