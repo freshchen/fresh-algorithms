@@ -21,7 +21,7 @@ public class Traverse {
             // 先进右再进左
             while (!stack.isEmpty()) {
                 root = stack.pop();
-                System.out.print(root.data + " -> ");
+                System.out.print(root.val + " -> ");
                 if (root.right != null) {
                     stack.push(root.right);
                 }
@@ -37,7 +37,7 @@ public class Traverse {
         if (root == null) {
             return;
         }
-        System.out.print(root.data + " -> ");
+        System.out.print(root.val + " -> ");
         preReur(root.left);
         preReur(root.right);
 
@@ -52,7 +52,7 @@ public class Traverse {
                 root = root.left;
             } else {
                 root = stack.pop();
-                System.out.print(root.data + " -> ");
+                System.out.print(root.val + " -> ");
                 root = root.right;
             }
         }
@@ -65,7 +65,7 @@ public class Traverse {
             return;
         }
         midReur(root.left);
-        System.out.print(root.data + " -> ");
+        System.out.print(root.val + " -> ");
         midReur(root.right);
     }
 
@@ -86,7 +86,7 @@ public class Traverse {
                 }
             }
             while (!stackStack.isEmpty()) {
-                System.out.print(stackStack.pop().data + " -> ");
+                System.out.print(stackStack.pop().val + " -> ");
             }
         }
         System.out.println();
@@ -98,7 +98,7 @@ public class Traverse {
         }
         postReur(root.left);
         postReur(root.right);
-        System.out.print(root.data + " -> ");
+        System.out.print(root.val + " -> ");
     }
 
     public static void level(TreeNode root) {
@@ -110,7 +110,7 @@ public class Traverse {
         TreeNode curr = null;
         while (!queue.isEmpty()) {
             curr = queue.pop();
-            System.out.print(curr.data + " -> ");
+            System.out.print(curr.val + " -> ");
             if (curr.left != null) {
                 queue.add(curr.left);
             }

@@ -6,12 +6,12 @@ package common.structure;
  * @param <E>
  */
 public class TreeNode<E> {
-    public E data;
+    public E val;
     public TreeNode<E> left;
     public TreeNode<E> right;
     public TreeNode<E> parent;
 
-    public TreeNode(E data) {
-        this.data = data;
+    public TreeNode(E val) {
+        this.val = val;
     }
 }

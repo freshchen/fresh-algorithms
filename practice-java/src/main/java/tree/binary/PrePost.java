@@ -59,10 +59,10 @@ public class PrePost {
     public static void main(String[] args) {
         System.out.println("pre");
         TreeNode node = MyUtils.genBinaryTree().left.left;
-        System.out.println(node.data + "'s pre is " + getPre(node).data);
+        System.out.println(node.val + "'s pre is " + getPre(node).val);
 
         System.out.println("post");
-        System.out.println(node.data + "'s post is " + getPost(node).data);
+        System.out.println(node.val + "'s post is " + getPost(node).val);
 
     }
 }
