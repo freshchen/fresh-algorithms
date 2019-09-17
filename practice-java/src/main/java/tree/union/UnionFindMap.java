@@ -1,6 +1,6 @@
 package tree.union;
 
-import common.Structure.Union;
+import common.structure.Union;
 
 import java.util.*;
 

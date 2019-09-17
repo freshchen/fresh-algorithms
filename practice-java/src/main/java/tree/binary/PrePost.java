@@ -1,7 +1,7 @@
 package tree.binary;
 
 import common.MyUtils;
-import common.Structure.TreeNode;
+import common.structure.TreeNode;
 
 /**
  * @anthor LingChen

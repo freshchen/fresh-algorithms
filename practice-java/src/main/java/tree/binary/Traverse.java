@@ -2,7 +2,7 @@ package tree.binary;
 
 
 import common.MyUtils;
-import common.Structure.TreeNode;
+import common.structure.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Stack;

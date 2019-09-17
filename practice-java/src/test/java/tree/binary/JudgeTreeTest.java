@@ -1,7 +1,7 @@
 package tree.binary;
 
 import common.MyUtils;
-import common.Structure;
+import common.structure.TreeNode;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -16,7 +16,7 @@ public class JudgeTreeTest {
 
     @Test
     public void isAVL() {
-        Structure.TreeNode root = MyUtils.genBinaryTree();
+        TreeNode root = MyUtils.genBinaryTree();
         assertTrue(JudgeTree.isAVL(root));
     }
 }

@@ -1,7 +1,7 @@
 package common;
 
-import common.Structure.Node;
-import common.Structure.TreeNode;
+import common.structure.Node;
+import common.structure.TreeNode;
 
 import java.util.Arrays;
 

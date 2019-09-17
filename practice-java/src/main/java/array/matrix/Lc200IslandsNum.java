@@ -25,7 +25,6 @@ package array.matrix;
  * <p>
  * 输出: 3
  *
- * {@link tree.union.IslandsNumParallel} 并行计算方法
  */
 public class Lc200IslandsNum {
 

@@ -1,7 +1,7 @@
 package linked.single;
 
 import common.MyUtils;
-import common.Structure.Node;
+import common.structure.Node;
 
 /**
  * @anthor LingChen
