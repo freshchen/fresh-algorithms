@@ -45,7 +45,6 @@ public class DoProjectMakeMoney {
                 profit.add(cost.poll());
             }
             if (profit.isEmpty()) {
-                buffer.append("拥有资源太少，做不了其他任务了").append("\n");
                 break;
             }
             VVVNode<String, Integer, Integer> curr = profit.poll();
