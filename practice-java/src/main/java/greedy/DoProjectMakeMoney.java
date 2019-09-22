@@ -41,7 +41,7 @@ public class DoProjectMakeMoney {
             cost.add(node);
         });
         for (int i = 0; i < times; i++) {
-            if (!cost.isEmpty() && cost.peek().getV2() < init) {
+            while (!cost.isEmpty() && cost.peek().getV2() <= init) {
                 profit.add(cost.poll());
             }
             if (profit.isEmpty()) {
